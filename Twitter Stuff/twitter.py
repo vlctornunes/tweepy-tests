@@ -12,10 +12,10 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tw.API(auth)
 
-#public_tweets = api.home_timeline()
+public_tweets = api.home_timeline()
 
-search_words = 'Whinderson' + '-filter:retweets'
-public_tweets = tw.Cursor(api.search, q=search_words).items(30)
+#search_words = 'Whinderson' + '-filter:retweets'
+#public_tweets = tw.Cursor(api.search,q=search_words).items(15)
 
 for tweet in public_tweets:
-    print(tweet.source)
+    print([tweet.text])
